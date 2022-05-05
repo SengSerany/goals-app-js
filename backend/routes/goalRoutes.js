@@ -10,12 +10,4 @@ const {
 router.route('/').get(getGoals).post(createGoal)
 router.route('/:id').patch(updateGoal).delete(deleteGoal)
 
-// router.get('/', getGoals);
-
-// router.post('/', createGoal);
-
-// router.patch('/:id', updateGoal);
-
-// router.delete('/:id', deleteGoal);
-
 module.exports = router
