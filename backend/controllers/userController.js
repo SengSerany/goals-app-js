@@ -14,9 +14,9 @@ const registerUser = asyncHandler(async (req, res) => {
         throw new Error("All field must be completed");
     }
 
+    // Check if user already exist
     const isUserExist = await User.findOne({ email })
 
-    // Check if user already exist
     if (isUserExist) {
         res.status(400);
         throw new Error("The email is already used");
@@ -35,7 +35,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // response
     if (user) {
-        res.status(400).json({
+        res.status(201).json({
             _id: user.id,
             name: user.name,
             email: user.email,
