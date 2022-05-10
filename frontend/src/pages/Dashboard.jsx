@@ -51,12 +51,15 @@ function Dashboard() {
 
       <GoalForm />
       <section className="content">
-        {goals.length > 0 ?
+        {goals.length > 0 ? (
           <div className="goals">
-            {goals.map( (goalObj) => {
-              return <GoalItem key={goals._id} goal={goalObj} />
-            })}
-          </div> : (<h3>You have not set any goals</h3>)}
+            {goals.map((goalObj) => (
+              <GoalItem key={goalObj._id} goal={goalObj} />
+            ))}
+          </div>
+          ) : (
+          <h3>You have not set any goals</h3>
+          )}
       </section>
     </>
   )
